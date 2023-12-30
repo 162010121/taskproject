@@ -73,11 +73,12 @@ if (user.getId() !=task.getUser().getId()) {
 	}
 
 	@Override
-	public List<Task> getAllTasks() {
-		
-		return taskRepository.findAll();
-		
+	public List<TaskDTO> getAllTasks() {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+	
 
 	
 

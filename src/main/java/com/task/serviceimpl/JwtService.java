@@ -35,7 +35,7 @@ public class JwtService {
 	}
 
 	private Key getSecKey() {
-		byte[] keybytes = Decoders.BASE64.decode("ECD687FBA7582");
+		byte[] keybytes = Decoders.BASE64.decode("f334dbecce2db08aa4f98612e292cf0c90fcc08df8ed703c5c982f35b882c652");
 		return Keys.hmacShaKeyFor(keybytes);
 
 	}

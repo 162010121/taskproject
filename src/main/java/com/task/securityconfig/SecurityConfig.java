@@ -32,7 +32,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		  return http.csrf().disable().cors().and()
 	                .authorizeHttpRequests()
-	                .antMatchers("/api/register", "/api/userlogin","api/getAllTasks").permitAll()
+	                .antMatchers("/api/register", "/api/userlogin","api/getAllTasks","/api/authenticate").permitAll()
 	                .and()
 	                .authorizeHttpRequests().antMatchers("/api/**")
 	                .authenticated()

@@ -20,7 +20,7 @@ import com.task.service.UserService;
 import com.task.serviceimpl.JwtService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class AuthController {
 
 	@Autowired
@@ -55,23 +55,23 @@ public class AuthController {
 		return ResponseEntity.ok(new JwtAuthResponce(token));
 
 	}
-//	
-//	@PostMapping("/authenticate")
-//	public String generateToken(@RequestBody LoginDTO loginDTO)
-//	{
-//		
-//		Authentication  authentication =authenticationManager.
-//				authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
-//		if(authentication.isAuthenticated())
-//		{
-//			return jwtService.generateToken(loginDTO.getEmail(),loginDTO.getPassword());
-//
-//		}
-//		else
-//		{
-//			throw  new UsernameNotFoundException("Invalid Token");
-//		}
-//		
-//		
-//	}
+	
+	@PostMapping("/authenticate")
+	public String generateToken(@RequestBody LoginDTO loginDTO)
+	{
+		
+		Authentication  authentication =authenticationManager.
+				authenticate(new UsernamePasswordAuthenticationToken(loginDTO.getEmail(), loginDTO.getPassword()));
+		if(authentication.isAuthenticated())
+		{
+			return jwtService.generateToken(loginDTO.getEmail(),loginDTO.getPassword());
+
+		}
+		else
+		{
+			throw  new UsernameNotFoundException("Invalid Token");
+		}
+		
+		
+	}
 }
